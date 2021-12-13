@@ -29,9 +29,6 @@ export default class User extends BaseModel {
   public city: string
 
   @column()
-  public status: string
-
-  @column()
   public capacity: boolean
 
   @column()

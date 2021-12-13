@@ -1,12 +1,22 @@
-<nav class="flex flex-row items-center px-6 py-4 dark:bg-zinc-900 dark:text-white bg-gray-200 fixed top-0 left-0
-right-0">
+<nav class="flex flex-row items-center px-6 py-4 dark:bg-zinc-900 dark:text-white bg-gray-200 sticky mb-12
+dark:border-b dark:border-white">
   <div>
     {{--<img src="{{ asset('assets/images/logo.svg') }}" alt="Lézard" class="h-12">--}}
     <h1 class="text-2xl font-semibold hidden md:block">Reptiles Stats</h1>
   </div>
   <div class="grow flex flex-col md:flex-row md:justify-end">
     <a href="/" class="px-4 py-2 text-sm hover:rounded hover:bg-emerald-600 hover:text-white">Accueil</a>
-    <a href="/connexion" class="px-4 py-2 text-sm hover:rounded hover:bg-emerald-600 hover:text-white">Connexion</a>
-    <a href="/inscription" class="px-4 py-2 text-sm hover:rounded hover:bg-emerald-600 hover:text-white">Inscription</a>
+    @if(auth.user)
+      <form action="#" method="POST">
+        @elements.button({ type: 'submit' , class: "px-4 py-2 text-sm hover:rounded hover:bg-emerald-600 hover:text-white"})
+        Déconnexion ({{ auth.user.pseudo }})
+        @end
+      </form>
+    @else
+      <a href="/connexion" class="px-4 py-2 text-sm hover:rounded hover:bg-emerald-600 hover:text-white">Connexion</a>
+      <a href="/inscription"
+         class="px-4 py-2 text-sm hover:rounded hover:bg-emerald-600 hover:text-white">Inscription</a>
+      @end
   </div>
+
 </nav>

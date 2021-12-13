@@ -12,7 +12,6 @@ export default class UsersSchema extends BaseSchema {
       table.string('avatar').nullable()
       table.string('region').notNullable()
       table.string('city').notNullable()
-      table.string('status').notNullable()
       table.boolean('capacity').notNullable().defaultTo(false)
       table.string('postal_code').notNullable()
       table.timestamp('created_at', {useTz: true})
