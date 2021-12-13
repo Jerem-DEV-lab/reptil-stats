@@ -57,11 +57,10 @@ Encore.addEntry('app', './resources/js/app.js')
  | we must copy them manually.
  |
  */
-// Encore.copyFiles({
-//   from: './resources/images',
-//   to: 'images/[path][name].[hash:8].[ext]',
-// })
-
+Encore.copyFiles({
+                   from: './resources/images',
+                   to  : 'images/[path][name].[hash:8].[ext]',
+                 })
 /*
  |--------------------------------------------------------------------------
  | Split shared code
@@ -145,6 +144,12 @@ Encore.configureDevServerOptions((options) => {
                         directory: join(__dirname, './resources/views'),
                         watch    : true,
                       })
+
+  /**
+   * Reset client as webpack encore is using an unallowed "host"
+   * property.
+   */
+  options.client = {}
 })
 
 /*
@@ -160,6 +165,7 @@ Encore.configureDevServerOptions((options) => {
 // Encore.enableLessLoader()
 // Encore.enableStylusLoader()
 
+// Encore.enableReactPreset()
 /*
  |--------------------------------------------------------------------------
  | CSS loaders
@@ -171,21 +177,6 @@ Encore.configureDevServerOptions((options) => {
  */
 Encore.enablePostCssLoader()
 // Encore.configureCssLoader(() => {})
-
-/*
- |--------------------------------------------------------------------------
- | Enable Vue loader
- |--------------------------------------------------------------------------
- |
- | Uncomment the following lines of code to enable support for vue. Also make
- | sure to install the required dependencies.
- |
- */
-// Encore.enableVueLoader(() => {}, {
-//   version: 3,
-//   runtimeCompilerBuild: false,
-//   useJsx: false
-// })
 
 /*
  |--------------------------------------------------------------------------
