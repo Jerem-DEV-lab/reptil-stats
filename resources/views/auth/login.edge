@@ -1,18 +1,18 @@
 @layout('layouts/app')
 
 @section('content')
-  <form action="{{ route('AuthController.login') }}" method="POST" class="max-w-2xl mx-auto">
-    <div class="grid grid-cols-1">
-      @form.group({name: 'user_credentials', class: "flex flex-col mb-6"})
-      @!form.label({title: "Pseudo / E-mail", class: "mb-1.5 block text-sm font-medium text-gray-700 dark:text-white"})
-      @!form.input({type: "text", class: 'border px-4 py-2 rounded-md focus:border-sky-700 '})
+  <form action="{{ route('AuthController.login') }}" method="POST" class="login-form">
+    <div class="mx-auto">
+      @form.group({name: 'user_credentials', class: 'input-group mb3'})
+      @!form.label({title: "Pseudo / E-mail", class: "label-field"})
+      @!form.input({type: "text", class: 'field-outlined full-width'})
       @end
-      @form.group({name: 'password', class: "flex flex-col mb-6"})
-      @!form.label({title: "Mot de passe", class: "mb-1.5 block text-sm font-medium text-gray-700 dark:text-white"})
-      @!form.input({type: "password", class: 'border px-4 py-2 rounded-md focus:border-sky-700 '})
+      @form.group({name: 'password', class: "input-group mb3"})
+      @!form.label({title: "Mot de passe", class: "label-field "})
+      @!form.input({type: "password", class: 'field-outlined full-width'})
       @end
     </div>
-    @elements.button({type: 'submit', class: "transition duration-250 ease-out hover:ease-in bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-md text-white text-md semibold mt-2"})
+    @elements.button({type: 'submit', class: "btn-contained btn-primary btn-lg"})
     Se connecter
     @end
   </form>

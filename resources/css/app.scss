@@ -7,12 +7,16 @@
 
 :root {
   --rs-body-color: #F9FAFB;
+  --rs-body-color-alt: #F9FAFB;
   --rs-font-family-primary: "Poppins, sans-serif";
   --rs-font-family-alt: "Montserrat, sans-serif";
   --rs-text-primary: #27272A;
   --rs-bg-nav: #E9EAED;
   --rs-error: #DC2626;
   --rs-green: #16A34A;
+  --rs-label: #18181B;
+  --rs-border: #9CA3AF;
+  --rs-focus: #1D4ED8;
   --rs-space: 8px;
 }
 
@@ -20,6 +24,7 @@
   --rs-body-color: #111318;
   --rs-bg-nav: #1E212A;
   --rs-text-primary: #FFFFFF;
+  --rs-body-color-alt: #171717;
 }
 
 *, *::after, *::before {
@@ -58,3 +63,5 @@ img {
 @import "modules/input";
 /* COMPONENTS */
 @import "components/nav";
+/* PAGES */
+@import "./pages/auth/login";
