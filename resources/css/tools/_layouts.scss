@@ -1,0 +1,294 @@
+// Conteneur
+// ==================
+:root {
+  --container-padding: 20px;
+  --container-width: calc(100vw - var(--container-padding) * 2);
+}
+
+@media only screen and (min-width: 900px) {
+  :root {
+    --container-padding: 32px;
+  }
+}
+
+@media only screen and (min-width: 1370px) {
+  :root {
+    --container-padding: 20px;
+    --container-width: 1330px;
+  }
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+// Container
+// ==============
+%container,
+.container {
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: calc(50% - var(--container-width) / 2);
+  padding-right: calc(50% - var(--container-width) / 2);
+}
+
+%container,
+.container-fluid {
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: calc(var(--space) * 4);
+  padding-right: calc(var(--space) * 4);
+}
+@include down(400) {
+  .container-fluid {
+    padding-left: calc(var(--space) * 2);
+    padding-right: calc(var(--space) * 2);
+  }
+}
+%container-margin {
+  margin-left: auto;
+  margin-right: auto;
+  width: var(--container-width);
+}
+
+.container-narrow {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+//grid
+%grid,
+.grid {
+  display: grid !important;
+  width: 100%;
+  grid-gap: var(--space);
+  grid-template-columns: repeat(auto-fill, minmax(var(--col, 275px), 1fr));
+}
+
+// Ratios
+// ==================
+.ratio {
+  height: 0;
+  padding-bottom: 56.25%;
+  position: relative;
+
+  & > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// Block
+// =============
+.inline {
+  display: inline;
+}
+
+// Horizontal
+// ==================
+.flex {
+  display: flex !important;
+
+  & > * {
+    min-width: 0;
+  }
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+
+  & > * {
+    margin-top: space(1);
+  }
+}
+
+.between {
+  justify-content: space-between;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+.centerY {
+  align-items: center;
+}
+
+.end {
+  justify-content: flex-end;
+}
+
+.stretch {
+  align-items: stretch;
+}
+
+.flex-md {
+  @include up(500) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.flex-start {
+  justify-content: flex-start;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inline-1 {
+  display: flex;
+
+  & > * + * {
+    margin-left: space(1);
+  }
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.height-max-content {
+  height: max-content;
+}
+
+.hidden {
+  display: none;
+}
+
+// Largeur
+// =============
+.w100 {
+  width: 100%;
+}
+
+
+// Layout
+// ==================
+
+.bg-body-secondary {
+  background: var(--body-color-secondary);
+}
+
+.rounded-top-left {
+  border-top-left-radius: 4px;
+}
+
+.rounded-top-right {
+  border-top-right-radius: 4px;
+}
+
+.sticky {
+  position: sticky;
+  top: space(3);
+}
+
+// Spaces
+// =============
+.mla {
+  margin-left: auto;
+}
+
+@for $i from 0 through 5 {
+  body {
+    .p#{$i} {
+      padding: space($i);
+    }
+
+    .pt#{$i} {
+      padding-top: space($i);
+    }
+
+    .pb#{$i} {
+      padding-bottom: space($i);
+    }
+
+    .px#{$i} {
+      padding-left: space($i);
+      padding-right: space($i);
+    }
+
+    .py#{$i} {
+      padding-top: space($i);
+      padding-bottom: space($i);
+    }
+
+    .my#{$i} {
+      margin-top: space($i);
+      margin-bottom: space($i);
+    }
+
+    .m#{$i} {
+      margin: space($i);
+    }
+
+    .mx#{$i} {
+      margin-left: space($i);
+      margin-right: space($i);
+    }
+
+    .mt#{$i} {
+      margin-top: space($i);
+    }
+
+    .mb#{$i} {
+      margin-bottom: space($i);
+    }
+
+    .mr#{$i} {
+      margin-right: space($i);
+    }
+
+    .ml#{$i} {
+      margin-left: space($i);
+    }
+  }
+}
+
+.mobile-only {
+  @include up(700) {
+    display: none;
+  }
+}
+
+.mobile-hidden {
+  @include down(700) {
+    display: none;
+  }
+}
+
+.desktop-only {
+  @include down(960) {
+    display: none;
+  }
+}
+
+.hover:hover {
+  background-color: rgba(3, 6, 11, 0.06);
+  @include dark() {
+    background-color: rgba(216, 218, 222, 0.06);
+  }
+}

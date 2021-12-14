@@ -1,0 +1,91 @@
+@import 'functions';
+
+// Responsive
+// ==================
+@mixin up($size) {
+  $size: strip-unit($size);
+  @media (min-width: $size * 1px) {
+    @content;
+  }
+}
+
+@mixin down($size) {
+  $size: strip-unit($size);
+  @media (max-width: $size * 1px) {
+    @content;
+  }
+}
+
+@mixin between($down, $up) {
+  $down: strip-unit($down);
+  $up: strip-unit($up);
+  @media (min-width: $down * 1px) and (max-width: $up * 1px) {
+    @content;
+  }
+}
+
+// Espacement
+// ==================
+@mixin container($width, $padding) {
+  width: 100%;
+  padding-left: $padding;
+  padding-right: $padding;
+
+  @include up($width + 2 * $padding) {
+    padding-left: calc(50vw - #{$width / 2});
+    padding-right: calc(50vw - #{$width / 2});
+  }
+}
+
+@mixin dark() {
+  @if (&) {
+    @media (prefers-color-scheme: dark) {
+      body:not([class~='theme-light']) & {
+        @content;
+      }
+    }
+    .theme-dark & {
+      @content;
+    }
+  } @else {
+
+    @media (prefers-color-scheme: dark) {
+      body:not([class~='theme-light']) {
+        @content;
+      }
+    }
+    .theme-dark {
+      @content;
+    }
+  }
+}
+
+//Responsive Breakpoint SCSS Mixin:
+
+//xxs
+@mixin mobile-xxs {
+  @media (max-width: 400px) {
+    @content;
+  }
+}
+
+//min-sm
+@mixin min-tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+//md
+@mixin desktop {
+  @media (max-width: 991px) {
+    @content;
+  }
+}
+
+//sm to md
+@mixin tablet-to-desktop {
+  @media (min-width: 768px) and (max-width: 991px) {
+    @content;
+  }
+}

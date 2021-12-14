@@ -1,0 +1,134 @@
+.form-group {
+  display: block;
+  position: relative;
+  height: 3rem;
+  margin-bottom: calc(var(--space) * 2);
+
+  & .outlined {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: inherit;
+    color: white;
+    outline: none;
+    padding: 1.25rem;
+    background: none;
+
+    &:hover {
+      border-color: var(--border);
+    }
+
+    &:focus {
+      border-color: var(--border);
+    }
+  }
+
+  & .form-label {
+    position: absolute;
+    left: 1rem;
+    top: 0.8rem;
+    padding: 0 0.5rem;
+    color: var(--text-primary);
+    cursor: text;
+    transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+    background-color: var(--body-color);
+  }
+}
+
+.outlined:focus ~ .form-label,
+.outlined:not(:placeholder-shown).outlined:not(:focus) ~ .form-label {
+  top: -0.5rem;
+  font-size: 0.8rem;
+  left: 0.8rem;
+}
+
+.outlined.fullwidth {
+  width: 100%;
+}
+
+.form-group .fullwidth {
+  width: 100% !important;
+}
+
+.form-group textarea.outlined {
+  resize: none;
+}
+
+.create-project .input-image {
+  display: none;
+}
+
+.form-input-file {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 48px;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  border: solid 1px var(--border);
+  border-radius: 4px;
+}
+
+.form-input-file .label-image {
+  cursor: pointer;
+}
+
+.container-input-image {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-radius: 4px;
+  transition: opacity .3s ease-in-out, background-color .3s ease-in-out;
+  padding: space(2);
+  border: solid 1px #94A3B8;
+  background: #272B2F;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+}
+
+.input-image-project {
+  display: none;
+}
+
+.label-image-project {
+  cursor: pointer;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+input.field-outlined, textarea.field-outlined {
+  display: block;
+  border-radius: 4px;
+  cursor: text;
+  color: currentColor;
+  background: none;
+  margin: 0;
+  overflow: hidden;
+  outline: none;
+  border: solid 1px rgba(255, 255, 255, 0.23);
+  padding: 8.5px 14px;
+  width: 100%;
+  line-height: 1.5;
+  font-size: .850rem;
+}
+
+label.label-field {
+  font-size: .850rem;
+  margin-bottom: space(1);
+  color: var(--text-muted);
+}
+
+input.field-outlined::placeholder, textarea.field-outlined {
+  font-size: .850rem;
+}
