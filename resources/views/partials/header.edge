@@ -1,21 +1,24 @@
-<nav class="">
-  <div>
+<nav class="main-nav">
+  <div class="container-nav-logo">
     {{--<img src="{{ asset('assets/images/logo.svg') }}" alt="Lézard" class="h-12">--}}
-    <a href="/" class="">Reptiles Stats</a>
+    <a href="/" class="logo-nav">Reptiles Stats</a>
   </div>
-  <div class="">
-    <a href="/" class="">Accueil</a>
+  <ul class="nav-lists">
     @if(auth.user)
-      <form action="{{ route('AuthController.logout') }}?_method=DELETE" method="POST">
-        @elements.button({ type: 'submit' , class: "px-4 py-2 text-sm hover:rounded hover:bg-emerald-600 hover:text-white"})
-        Déconnexion ({{ auth.user.pseudo }})
-        @end
-      </form>
+      <li>
+        <form action="{{ route('AuthController.logout') }}?_method=DELETE" method="POST" class="nav-item">
+          @elements.button({ type: 'submit' , class: "nav-item"})
+          Déconnexion ({{ auth.user.pseudo }})
+          @end
+        </form>
+      </li>
     @else
-      <a href="/connexion" class="">Connexion</a>
-      <a href="/inscription"
-         class="">Inscription</a>
+      <li>
+        <a href="/connexion" class="nav-item">Connexion</a>
+      </li>
+      <li>
+        <a href="/inscription" class="nav-item">Inscription</a>
+      </li>
       @end
-  </div>
-
+  </ul>
 </nav>

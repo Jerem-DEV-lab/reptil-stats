@@ -1,0 +1,33 @@
+.main-nav {
+  display: flex;
+  align-items: center;
+  padding: space(2) space(4);
+  background: var(--rs-bg-nav);
+}
+
+.container-nav-logo a.logo-nav {
+  display: block;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.main-nav .nav-lists {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.main-nav .nav-lists > *:not(:first-child){
+  margin-left: space(2);
+}
+.nav-item {
+  display: inline-flex;
+  font-size: .875rem;
+  padding: 6px 12px;
+  height: 100%;
+  font-weight: 500;
+
+  &:hover {
+    color: var(--rs-green);
+  }
+}
