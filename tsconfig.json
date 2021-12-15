@@ -33,6 +33,9 @@
       "@adonisjs/shield",
       "@adonisjs/lucid",
       "@adonisjs/auth"
+    ],
+    "lib": [
+      "dom"
     ]
   }
 }

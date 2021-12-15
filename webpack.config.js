@@ -45,7 +45,13 @@ Encore.setPublicPath('/assets')
  | entrypoints.
  |
  */
-Encore.addEntry('app', './resources/js/app.js')
+Encore.addEntry('app', './resources/js/app.ts')
+Encore.enableTypeScriptLoader(function (options) {
+  options.allowTsInNodeModules = true;
+  options.compilerOptions       = {
+    noUnusedLocals: false
+  }
+})
 
 /*
  |--------------------------------------------------------------------------
