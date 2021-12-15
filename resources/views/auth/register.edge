@@ -1,60 +1,63 @@
 @layout('layouts/app')
 
 @section('content')
-  <form action="{{ route('AuthController.register') }}" method="POST" class="register-form">
-    <div class="grid grid-cols-2 gap-5">
-      @form.group({name: 'pseudo', class: "input-group mb3"})
-      @!form.label({title: "Pseudo", class: "label-field"})
-      @!form.input({type: "text", class: 'field-outlined full-width'})
-      @end
-      @form.group({name: 'email', class: "input-group mb3"})
-      @!form.label({title: "E-mail", class: "label-field"})
-      @!form.input({type: "email", class: 'field-outlined full-width'})
-      @end
-    </div>
-    <div>
-      @form.group({name: 'password' , class: "input-group mb3"})
-      @!form.label({title: "Mot de passe", class: "label-field"})
-      @!form.input({type: "password", class: 'field-outlined full-width'})
-      @end
-      @form.group({name: 'password_confirmation' , class: "input-group mb3"})
-      @!form.label({title: "Confirmer votre mot de passe", class: "label-field"})
-      @!form.input({type: "password", class: 'field-outlined full-width'})
-      @end
-    </div>
-    <div>
-      @form.group({name: 'region' , class: "input-group mb3"})
-      @!form.label({title: "Dans quel régions êtes vous ?", class: "label-field"})
-      @!form.input({type: "text", class: 'field-outlined full-width'})
-      @end
-      @form.group({name: 'city' , class: "input-group mb3"})
-      @!form.label({title: "Dans quelle ville élevez-vous vos reptiles", class: "label-field"})
-      @!form.input({type: "text", class: 'field-outlined full-width'})
-      @end
-    </div>
-    <div>
-      @form.group({name: 'postal_code' , class: "input-group mb3"})
-      @!form.label({title: "Code postal", class: "label-field"})
-      @!form.input({type: "text", class: 'field-outlined full-width'})
-      @end
+  <div class="container">
+    <form action="{{ route('AuthController.register') }}" method="POST" class="register-form">
+      <div class="grid grid-cols-2 gap-5">
+        @form.group({name: 'pseudo', class: "input-group mb3"})
+        @!form.label({title: "Pseudo", class: "label-field"})
+        @!form.input({type: "text", class: 'field-outlined full-width'})
+        @end
+        @form.group({name: 'email', class: "input-group mb3"})
+        @!form.label({title: "E-mail", class: "label-field"})
+        @!form.input({type: "email", class: 'field-outlined full-width'})
+        @end
+      </div>
       <div>
-        <span class="mb-4 block text-sm font-medium text-gray-700 dark:text-white">Êtes-vous capacitaire ?</span>
-        <div class="input-group mb3">
-          <div class="">
-            <input type="radio" name="capacity" value="true" class="">
-            <label for="capacity" class="label-field">Oui</label>
-          </div>
-          <div class="">
-            <input type="radio" name="capacity" value="false" class="" checked>
-            <label for="#" class="">Non</label>
+        @form.group({name: 'password' , class: "input-group mb3"})
+        @!form.label({title: "Mot de passe", class: "label-field"})
+        @!form.input({type: "password", class: 'field-outlined full-width'})
+        @end
+        @form.group({name: 'password_confirmation' , class: "input-group mb3"})
+        @!form.label({title: "Confirmer votre mot de passe", class: "label-field"})
+        @!form.input({type: "password", class: 'field-outlined full-width'})
+        @end
+      </div>
+      <div>
+        @form.group({name: 'region' , class: "input-group mb3"})
+        @!form.label({title: "Dans quel régions êtes vous ?", class: "label-field"})
+        @!form.input({type: "text", class: 'field-outlined full-width'})
+        @end
+        @form.group({name: 'city' , class: "input-group mb3"})
+        @!form.label({title: "Dans quelle ville élevez-vous vos reptiles", class: "label-field"})
+        @!form.input({type: "text", class: 'field-outlined full-width'})
+        @end
+      </div>
+      <div>
+        @form.group({name: 'postal_code' , class: "input-group mb3"})
+        @!form.label({title: "Code postal", class: "label-field"})
+        @!form.input({type: "text", class: 'field-outlined full-width'})
+        @end
+        <div>
+          <span class="mb-4 block text-sm font-medium text-gray-700 dark:text-white">Êtes-vous capacitaire ?</span>
+          <div class="input-group mb3">
+            <div class="">
+              <input type="radio" name="capacity" value="true" class="">
+              <label for="capacity" class="label-field">Oui</label>
+            </div>
+            <div class="">
+              <input type="radio" name="capacity" value="false" class="" checked>
+              <label for="#" class="">Non</label>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="container-btn">
-      @elements.button({type: 'submit', class: "btn-contained btn-primary btn-lg"})
-      Inscription
-      @end
-    </div>
-  </form>
+      <div class="container-btn">
+        @elements.button({type: 'submit', class: "btn-contained btn-primary btn-lg"})
+        Inscription
+        @end
+      </div>
+    </form>
+
+  </div>
   @end
