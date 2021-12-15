@@ -2,6 +2,8 @@
   <div class="container-nav-logo">
     {{--<img src="{{ asset('assets/images/logo.svg') }}" alt="Lézard" class="h-12">--}}
     <a href="/" class="logo-nav">Reptiles Stats</a>
+    @icons.barsIcon({class: "nav-icon-menu", id:"icon-menu"})
+    @end
   </div>
   <ul class="nav-lists">
     @if(auth.user)
