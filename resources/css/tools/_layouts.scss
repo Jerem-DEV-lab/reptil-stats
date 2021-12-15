@@ -73,8 +73,6 @@
 .grid {
   display: grid !important;
   width: 100%;
-  grid-gap: var(--space);
-  grid-template-columns: repeat(auto-fill, minmax(var(--col, 275px), 1fr));
 }
 
 // Ratios
@@ -219,7 +217,7 @@
   margin-right: auto;
 }
 
-@for $i from 0 through 5 {
+@for $i from 0 through 20 {
   body {
     .p#{$i} {
       padding: space($i);

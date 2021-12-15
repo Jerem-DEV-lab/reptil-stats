@@ -9,10 +9,27 @@
 
 %section-title,
 .section-title {
-  font-size: 18px;
+  font-size: 24px;
   font-weight: bold;
-  border-bottom: 1px solid var(--border-light);
   padding-bottom: space(.5);
+}
+
+%subtitle,
+.subtitle{
+  font-size: 18px;
+  font-weight: 600;
+  padding-bottom: space(.5);
+}
+
+%paragraph,
+.paragraph {
+  font-size: 16px;
+  line-height: 33px;
+}
+
+%text-center,
+.text-center{
+  text-align: center;
 }
 
 %card-title {

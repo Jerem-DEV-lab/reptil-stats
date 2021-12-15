@@ -1,0 +1,14 @@
+.layout-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: calc(var(--rs-space) * 2);
+}
+
+.list-services {
+  list-style: circle;
+
+  & > * {
+    line-height: 33px;
+    font-size: medium;
+  }
+}
