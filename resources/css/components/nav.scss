@@ -15,6 +15,7 @@
   padding: space(1);
   border-radius: 50%;
   transition: background-color .4s;
+
   &:hover {
     background-color: rgba(#9CA3AF, .2);
   }
@@ -39,10 +40,11 @@
 
 .nav-item {
   display: inline-flex;
-  font-size: .875rem;
+  font-size: 14px;
+  text-transform: uppercase;
   padding: 6px 12px;
   height: 100%;
-  font-weight: 500;
+  font-weight: 600;
 
   &:hover {
     color: var(--rs-green);

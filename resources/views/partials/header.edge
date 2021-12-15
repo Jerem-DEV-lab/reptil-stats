@@ -8,11 +8,17 @@
   <ul class="nav-lists">
     @if(auth.user)
       <li>
-        <form action="{{ route('AuthController.logout') }}?_method=DELETE" method="POST" class="nav-item">
-          @elements.button({ type: 'submit' , class: "nav-item"})
-          Déconnexion ({{ auth.user.pseudo }})
-          @end
-        </form>
+        <div class="menu-dropdown">
+          <button class="menu-dropdown-button nav-item flex center">
+            {{auth.user.pseudo}}
+          </button>
+          <div id="menu-list-item" class="menu-content">
+            <a href="#" class="menu-dropdown-item">Votre profil</a>
+            <a href="#" class="menu-dropdown-item">
+              Déconnexion
+            </a>
+          </div>
+        </div>
       </li>
     @else
       <li>
