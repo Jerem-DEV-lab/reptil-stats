@@ -1,0 +1,45 @@
+.general-profil-content header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.general-profil-content header .avatar {
+  width: 45px;
+  height: 45px;
+  margin-right: space(2);
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+
+.label-helper {
+  display: block;
+  font-size: 12px;
+  line-height: 22px;
+  margin-top: space(1);
+}
+
+.general-profil-content header .label-helper {
+  display: none;
+}
+
+.info-profil {
+  display: grid;
+  grid-column-gap: space(2);
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  margin-top: space(2);
+  @include up(850) {
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
+  }
+  @include up(1080){
+    grid-column-gap: space(6);
+  }
+  @include up(1200) {
+    grid-column-gap: space(16);
+  }
+}

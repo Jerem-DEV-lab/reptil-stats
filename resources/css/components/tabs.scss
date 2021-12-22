@@ -28,7 +28,7 @@
 /*Animation des tabs*/
 
 [role="tabpanel"] {
-  transition: .3s;
+  transition: .4s;
 }
 
 [role="tabpanel"][hidden="hidden"] {
@@ -41,7 +41,7 @@
   opacity: 0;
 }
 
-.content-tab{
+.content-tab {
   position: relative;
   border: solid 1px var(--rs-border);
   padding: space(2);
