@@ -1,0 +1,36 @@
+.tabs-container {
+  display: flex;
+  justify-content: center;
+}
+
+.tabs-container a {
+  border: solid 1px var(--rs-border);
+  padding: space(1);
+  transition: background-color 250ms ease;
+}
+
+.tabs-container a[aria-selected="true"] {
+  background-color: var(--rs-focus);
+}
+
+.tabs-container a:hover, .tabs-container a:focus {
+  background-color: var(--rs-focus);
+
+}
+
+/*Animation des tabs*/
+
+[role="tabpanel"] {
+  transition: .3s;
+}
+
+[role="tabpanel"][hidden="hidden"] {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  opacity: 0;
+}
+

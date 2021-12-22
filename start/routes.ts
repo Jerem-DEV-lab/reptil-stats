@@ -5,3 +5,4 @@ Route.get('/', async ({view}) => {
 })
 import './Auth/AuthRoutes'
 import './Reptiles/ReptilesRoutes'
+import './Profil/ProfilRoutes'

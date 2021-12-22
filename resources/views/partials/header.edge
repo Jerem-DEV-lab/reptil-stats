@@ -15,7 +15,7 @@
             {{auth.user.pseudo}}
           </button>
           <div id="menu-list-item" class="menu-content">
-            <a href="#" class="menu-dropdown-item">Votre profil</a>
+            <a href="/profil" class="menu-dropdown-item">Votre profil</a>
             <form action="{{ route('AuthController.logout') }}?_method=DELETE" method="POST">
               @elements.button({ type: 'submit', class: "menu-dropdown-item" })
               Déconnexion

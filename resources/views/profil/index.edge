@@ -1,0 +1,34 @@
+@layout('layouts/app')
+
+@section('content')
+  <div class="container">
+    <h1 class="title mt2">
+      Votre compte
+    </h1>
+
+    <nav-tabs class="tabs-container">
+      <a href="#generale" aria-selected="true">Générale</a>
+      <a href="#tab2">tab2</a>
+      <a href="#tab3">tab3</a>
+    </nav-tabs>
+    <div style="position: relative">
+
+      <div id="generale">
+        tab1
+      </div>
+      <div id="tab2" hidden="hidden">
+        tabs2
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus dignissimos dolorem doloremque, eligendi
+        fugiat hic impedit in ipsam mollitia nesciunt odit praesentium quibusdam sapiente sequi soluta veritatis
+        voluptates voluptatum?
+      </div>
+      <div id="tab3" hidden="hidden">
+        tabs 3
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus dignissimos dolorem doloremque, eligendi
+        fugiat hic impedit in ipsam mollitia nesciunt odit praesentium quibusdam sapiente sequi soluta veritatis
+        voluptates voluptatum?
+      </div>
+
+    </div>
+  </div>
+  @end
