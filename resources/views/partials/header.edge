@@ -16,9 +16,11 @@
           </button>
           <div id="menu-list-item" class="menu-content">
             <a href="#" class="menu-dropdown-item">Votre profil</a>
-            <a href="#" class="menu-dropdown-item">
+            <form action="{{ route('AuthController.logout') }}?_method=DELETE" method="POST">
+              @elements.button({ type: 'submit', class: "menu-dropdown-item" })
               Déconnexion
-            </a>
+              @end
+            </form>
           </div>
         </div>
       </li>
