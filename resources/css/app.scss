@@ -12,6 +12,7 @@
   --rs-font-family-alt: "Montserrat, sans-serif";
   --rs-text-primary: #27272A;
   --rs-bg-nav: #E9EAED;
+  --rs-bg-contrast: #E9EAED;
   --rs-error: #DC2626;
   --rs-green: #16A34A;
   --rs-label: #18181B;
@@ -23,6 +24,7 @@
 @include dark() {
   --rs-body-color: #111318;
   --rs-bg-nav: #1E212A;
+  --rs-bg-contrast: #1E212A;
   --rs-text-primary: #FFFFFF;
   --rs-body-color-alt: #171717;
 }

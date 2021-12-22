@@ -1,21 +1,28 @@
 .tabs-container {
   display: flex;
-  justify-content: center;
+  border-bottom: solid 1px var(--rs-border);
+  margin-bottom: space(4);
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scrollbar-width: none;
 }
 
 .tabs-container a {
-  border: solid 1px var(--rs-border);
-  padding: space(1);
+  white-space: nowrap;
+  font-weight: 500;
+  font-size: 14px;
+  padding: space(2);
   transition: background-color 250ms ease;
+  position: relative;
+  bottom: -1px;
 }
 
 .tabs-container a[aria-selected="true"] {
-  background-color: var(--rs-focus);
+  border-bottom: solid 2px var(--rs-focus);
 }
 
 .tabs-container a:hover, .tabs-container a:focus {
-  background-color: var(--rs-focus);
-
+  border-bottom: solid 2px var(--rs-focus);
 }
 
 /*Animation des tabs*/
@@ -34,3 +41,10 @@
   opacity: 0;
 }
 
+.content-tab{
+  position: relative;
+  border: solid 1px var(--rs-border);
+  padding: space(2);
+  border-radius: 4px;
+  background: var(--rs-bg-contrast);
+}
