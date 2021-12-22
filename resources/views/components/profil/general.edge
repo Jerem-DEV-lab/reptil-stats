@@ -1,58 +1,68 @@
 <section class="general-profil-content">
-  <header>
-    <div class="avatar">
-      <img src="https://pickaface.net/gallery/avatar/20160625_050020_889_FAKE.png" alt="votre avatar">
-    </div>
-    <div>
-      @elements.button({type: 'submit', class: "btn-outlined btn-primary"})
-      Changer d'avatar
-      @end
-      <span class="label-helper">La dimension recommander pour l’avatar : 200x200, Poids de l’image max 2MB</span>
-    </div>
-  </header>
-  <div class="info-profil">
-    @form.group({name: 'pseudo', class: "input-group mb2 "})
-    @!form.label({title: "Votre pseudo", class: "label-field"})
-    <input type="text" name="pseudo" class="field-outlined full-width" value="{{auth.user.pseudo}}" disabled>
-    @end
-    @form.group({name: 'email', class: "input-group mb2 "})
-    @!form.label({title: "Adresse e-mail", class: "label-field"})
-    <input type="email" id="email" name="email" class="field-outlined full-width" value="{{auth.user.email}}">
-    @end
-    @form.group({name: 'region', class: "input-group mb2"})
-    @!form.label({title: "Région", class: "label-field"})
-    <input type="text" id="region" name="region" class="field-outlined full-width" value="{{auth.user.region}}">
-    @end
-    <div class="grid-cols-2-md">
-      @form.group({name: 'postal_code', class: "input-group mb2"})
-      @!form.label({title: "Code postal", class: "label-field"})
-      <input type="text" id="postal_code" name="postal_code" class="field-outlined full-width"
-             value="{{auth.user.postal_code}}">
-      @end
-      @form.group({name: 'city', class: "input-group mb2"})
-      @!form.label({title: "Ville", class: "label-field"})
-      <input type="text" id="city" name="city" class="field-outlined full-width" value="{{auth.user.city}}">
-      @end
-    </div>
-    @if(auth.user.capacity)
-      <div>
-        <div class="label-field">
-          Capacitaire
-        </div>
-        <label class="switch">
-          <input type="checkbox" role="switch">
-        </label>
+  <form method="post">
+    <header>
+      <div class="avatar">
+        @if(auth.user.avatar)
+          <img src="{{ asset(auth.user.avatar) }}" alt="votre avatar">
+        @else
+          <img src="https://pickaface.net/gallery/avatar/20160625_050020_889_FAKE.png" alt="reptile">
+          @end
       </div>
-    @else
       <div>
-        <div class="mb2 label-field">
-          Capacitaire
-        </div>
-        <label class="switch">
-          <input type="checkbox" role="switch" checked>
-        </label>
+        @elements.button({type: 'submit', class: "btn-outlined btn-primary"})
+        Changer d'avatar
+        @end
+        <span class="label-helper">La dimension recommander pour l’avatar : 200x200, Poids de l’image max 2MB</span>
       </div>
+    </header>
+    <div class="info-profil mb2">
+      @form.group({name: 'pseudo', class: "input-group mb2 "})
+      @!form.label({title: "Votre pseudo", class: "label-field"})
+      <input type="text" name="pseudo" class="field-outlined full-width" value="{{auth.user.pseudo}}" disabled>
       @end
-  </div>
-
+      @form.group({name: 'email', class: "input-group mb2 "})
+      @!form.label({title: "Adresse e-mail", class: "label-field"})
+      <input type="email" id="email" name="email" class="field-outlined full-width" value="{{auth.user.email}}">
+      @end
+      @form.group({name: 'region', class: "input-group mb2"})
+      @!form.label({title: "Région", class: "label-field"})
+      <input type="text" id="region" name="region" class="field-outlined full-width" value="{{auth.user.region}}">
+      @end
+      <div class="grid-cols-2-md">
+        @form.group({name: 'postal_code', class: "input-group mb2"})
+        @!form.label({title: "Code postal", class: "label-field"})
+        <input type="text" id="postal_code" name="postal_code" class="field-outlined full-width"
+               value="{{auth.user.postal_code}}">
+        @end
+        @form.group({name: 'city', class: "input-group mb2"})
+        @!form.label({title: "Ville", class: "label-field"})
+        <input type="text" id="city" name="city" class="field-outlined full-width" value="{{auth.user.city}}">
+        @end
+      </div>
+      @if(auth.user.capacity)
+        <div>
+          <div class="label-field">
+            Capacitaire
+          </div>
+          <label class="switch">
+            <input type="checkbox" role="switch">
+          </label>
+        </div>
+      @else
+        <div>
+          <div class="mb2 label-field">
+            Capacitaire
+          </div>
+          <label class="switch">
+            <input type="checkbox" role="switch" checked>
+          </label>
+        </div>
+        @end
+    </div>
+    <div class="flex end">
+      @elements.button({type: 'submit', class: "btn-contained btn-primary"})
+      Sauvegarder mes informations
+      @end
+    </div>
+  </form>
 </section>
