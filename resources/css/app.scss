@@ -19,6 +19,7 @@
   --rs-border: #9CA3AF;
   --rs-focus: #1D4ED8;
   --rs-space: 8px;
+  --rs-text-muted: #9999
 }
 
 @include dark() {
@@ -71,3 +72,11 @@ img {
 @import "./pages/auth/login";
 @import "./pages/auth/register";
 @import "./pages/home/home";
+@import "./pages/profil/general";
+
+.rounded {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  background: var(--rs-border);
+}

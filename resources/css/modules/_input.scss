@@ -7,6 +7,12 @@
   flex-direction: column;
 }
 
+input.field-outlined[disabled] {
+  color: var(--rs-text-muted);
+  border: solid 1px var(--rs-text-muted);
+  cursor: not-allowed;
+}
+
 input.field-outlined, textarea.field-outlined {
   display: block;
   border-radius: 4px;
@@ -31,13 +37,49 @@ input.field-outlined, textarea.field-outlined {
   }
 }
 
-label.label-field {
+label.label-field, .label-field {
+  display: block;
   font-weight: 500;
-  font-size: 1rem;
-  margin-bottom: space(1);
+  font-size: 14px;
+  margin-bottom: space(2);
   color: var(--rs-text-primary);
 }
 
 input.field-outlined::placeholder, textarea.field-outlined {
-  font-size: .850rem;
+  font-size: 14px;
+}
+
+input[type="checkbox"][role=switch] {
+  appearance: none;
+  box-sizing: content-box;
+  width: 2rem;
+  height: 1rem;
+  padding: 0.25rem;
+  margin: 0;
+  background-color: #efefef;
+  border-radius: 0.75rem;
+  vertical-align: sub;
+  transition: background-color 0.2s;
+  border: solid 1px var(--rs-text-muted);
+  cursor: pointer;
+}
+
+input[type="checkbox"][role=switch]:after {
+  content: '';
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.45rem;
+  background-color: #9C9C9C;
+  transition: margin 0.2s;
+}
+
+input[type="checkbox"][role=switch]:checked {
+  background-color: var(--rs-focus);
+  border: solid 1px var(--rs-focus);
+}
+
+input[type="checkbox"][role=switch]:checked:after {
+  margin-left: 1rem;
+  background-color: #FFF;
 }

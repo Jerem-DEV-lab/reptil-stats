@@ -75,6 +75,15 @@
   width: 100%;
 }
 
+.grid-cols-2-md{
+  display: grid;
+  grid-template-columns: 1fr;
+  @include up(768){
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: space(4);
+  }
+}
+
 // Ratios
 // ==================
 .ratio {
