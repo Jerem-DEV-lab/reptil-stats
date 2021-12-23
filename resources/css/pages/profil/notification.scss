@@ -1,0 +1,9 @@
+.notification-container {
+  position: relative;
+}
+
+.notification-container .row-notification {
+  display: flex;
+  justify-content: space-between;
+  margin-top: space(2);
+}
