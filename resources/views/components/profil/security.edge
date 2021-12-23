@@ -1,0 +1,28 @@
+<section class="security-container">
+    <header>
+        <h2 class="subtitle">Mot de passe</h2>
+    </header>
+    <article>
+        <form method="post" class="form-security-profil mt2">
+            <div class="form-content">
+                @form.group({name: 'old_password', class: 'input-group mb3'})
+                @!form.label({title: "Ancien mot de passe", class: "label-field"})
+                @!form.input({type: "password", class: 'field-outlined full-width', placeholder: "Mot de passe actuel"})
+                @end
+                @form.group({name: 'new_password', class: "input-group mb3"})
+                @!form.label({title: "Nouveau mot de passe", class: "label-field "})
+                @!form.input({type: "password", class: 'field-outlined full-width', placeholder: "Nouveau mot de passe"})
+                @end
+                @form.group({name: 'confirm_password', class: "input-group mb3"})
+                @!form.label({title: "Confirmation du nouveau mot de passe", class: "label-field "})
+                @!form.input({type: "password", class: 'field-outlined full-width', placeholder: "Confirmer votre nouveau mot de passe"})
+                @end
+            </div>
+            <div class="flex end">
+                @elements.button({type: 'submit', class: "btn-contained btn-primary"})
+                Changer de mot de passe
+                @end
+            </div>
+        </form>
+    </article>
+</section>

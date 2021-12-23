@@ -43,6 +43,9 @@ label.label-field, .label-field {
   font-size: 14px;
   margin-bottom: space(2);
   color: var(--rs-text-primary);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 input.field-outlined::placeholder, textarea.field-outlined {
